@@ -1,146 +1,340 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>IPL STATS 2020</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">IPL 2020😎</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Stats</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Player Stats
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Batsmen</a>
-                <a class="dropdown-item" href="#">Bowlers</a>
-                <a class="dropdown-item" href="#">All Rounders</a>
-                <a class="dropdown-item" href="#">Wicket Keepers</a>
-                <a class="dropdown-item" href="#">Fielders</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Latest </a>
-                <a class="dropdown-item" href="#">News </a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <div class="mx-2">
-            <button class="btn btn-danger" data-toggle="modal" data-target="#sModal">Sign up</button>
-            <button class="btn btn-danger" data-toggle="modal" data-target="#lModal">Login</button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>IPL STATS 2020</title>
+  <style type="text/css">
+    footer {
+      width: 100%;
+      margin-top: 60px;
+      background-color: #343A40;
+      padding: 30px 0;
+    }
+
+    footer ul {
+      float: left;
+      width: 48%;
+      margin: 1%;
+    }
+
+    footer ul h3 {
+      font-size: 50px;
+      color: azure;
+    }
+
+    footer ul li {
+      font-size: 20px;
+      color: azure;
+      list-style-type: none;
+    }
+
+    footer:after {
+      content: "";
+      display: flex;
+      clear: both;
+    }
+
+    #a {
+      list-style-type: circle;
+    }
+
+    #abc {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">IPL 2020😎</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Stats</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Player Stats
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Batsmen</a>
+            <a class="dropdown-item" href="#">Bowlers</a>
+            <a class="dropdown-item" href="#">All Rounders</a>
+            <a class="dropdown-item" href="#">Wicket Keepers</a>
+            <a class="dropdown-item" href="#">Fielders</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Latest </a>
+            <a class="dropdown-item" href="#">News </a>
           </div>
-          <!-- SIGN Modal -->
-  <div class="modal fade" id="sModal" tabindex="-1" aria-labelledby="sModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="sModalLabel">IPL 2020🙂</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputPassword1">UserName</label>
-              <input type="text" class="form-control" id="exampleInputPassword1">
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <div class="mx-2">
+        <button class="btn btn-danger" data-toggle="modal" data-target="#sModal">Sign up</button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#lModal">Login</button>
+      </div>
+      <!-- SIGN Modal -->
+      <div class="modal fade" id="sModal" tabindex="-1" aria-labelledby="sModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="sModalLabel">IPL 2020🙂</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group form-check">
-            
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              <small id="emailHelp" class="form-text text-muted">SignUp for regular updates</small>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">UserName</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
 
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <small id="emailHelp" class="form-text text-muted">SignUp for regular updates</small>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-info" id="a">REGISTER</button>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-info" id="a">REGISTER</button>
+      </div>
+
+
+      <!-- LOGIN Modal -->
+      <div class="modal fade" id="lModal" tabindex="-1" aria-labelledby="lModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="lModalLabel">IPL 2020🙂</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">UserName</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <small id="emailHelp" class="form-text text-muted">Login for regular updates</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-info" id="b">REMEMBER ME</button>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+    Visit <a href="https://www.iplt20.com/" class="alert-link" target="_blank">IPLT20.com</a> for more info.
+  </div>
+
+  <div class="container my-4" id="abc">
+    <div class="row featurette d-flex justify-content-center align-items-center">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">IPL 2020 TO BE HELD IN UAE. <span class="text-muted">-BCCI
+          </span></h2>
+        <p class="lead">
+          DUE TO MANY CORONA CASES IN INDIA <b>IPL</b> WAS SCHEDULED IN A COUNTRY WITH LESS
+          COVID CASES ie <b>AUSTRALIA</b> OR <b>UAE</b>.BUT DUE TO BIG BASH LEAGUE AND AUSTRALIAN
+          OPEN,IPL WAS TO BE HELD IN UAE INSTEAD OF AUSTRALIA.The three venues that have
+          been put in place for the IPL 2020 season are Dubai International Cricket
+          Stadium (Dubai), Sheikh Zayed Cricket Stadium (Abu Dhabi) and Sharjah Cricket
+          Stadium (Sharjah). The distribution of matches isn't even in all three.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" src="img/1.png" width="400px">
+
+      </div>
+    </div>
+    <div class="row featurette d-flex justify-content-center align-items-center" id="abc">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">8 TEAMS WHICH WILL PLAY FOR IPL CUP 2020. <span class="text-muted">- BCCI
+          </span></h2>
+        <p class="lead">
+          Earlier it was said that may be 10 teams will be a part of IPL 2020 but the 2 other
+          teams will be added in 2022 as per the meeting held by <b>BCCI</b>. the Teams
+          will be as follows:
+        <ul>
+          <li>MI</li>
+          <li>DC</li>
+          <li>SRH</li>
+          <li>RCB</li>
+          <li>KKR</li>
+          <li>KXIP</li>
+          <li>CSK</li>
+          <li>RR</li>
+        </ul>
+
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="img-fluid" src="img/2.jpg" style="height:300px;width: 500px;">
+
+      </div>
+    </div>
+    <div class="row featurette d-flex justify-content-center align-items-center" id="abc">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">IPL 2020 POSTPONED TO SEPTEMBER 19,2020 <span class="text-muted">-SOME PLAYER OF
+            CSK CAUGHT CORONA
+          </span></h2>
+        <p class="lead">CSK players have caught corona during the practice and warm-up matches so IPL 2020
+          will be postponed to september 19 with opening matches held between CSK and MI following
+          by matches of DC and KXIP.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" src="img/3.jpg" width="400px">
+
       </div>
     </div>
   </div>
 
-
-  <!-- LOGIN Modal -->
-  <div class="modal fade" id="lModal" tabindex="-1" aria-labelledby="lModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="lModalLabel">IPL 2020🙂</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputPassword1">UserName</label>
-              <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-              <small id="emailHelp" class="form-text text-muted">Login for regular updates</small>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-info" id="b">REMEMBER ME</button>
-        </div>
-      </div>
-    </div>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading"> IPL Improvement</h4>
+    <p>Since 2008 the popularity of IPL has been increased to a great extend says BCCI.</p>
+    <hr>
+    <p class="mb-0">Following are the reports:</p>
   </div>
-        </div>
-      </nav>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 8%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2008</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 16%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2009</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2010</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 32%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2011</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2012</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 48%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2013</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 56%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2014</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 64%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2016</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 72%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2017</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2018</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2019</div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0"
+      aria-valuemax="100">2020</div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <h3> GET IN TOUCH</h3>
+        <li> - IPL 2020</li>
+        <li> - Watch Now</li>
+        <li> - Live Sony HD</li>
+        <li> - The Indian Premier League is a professional Twenty20 cricket </li>
+        <li> league in India usually contested between March and May of </li>
+        <li> every year by eight teams representing eight different cities or states in India held by the Board of
+          Control for Cricket in </li>
+        <li>India in 2007.</li>
+      </ul>
+      <iframe width="560" height="380" src="https://www.youtube.com/embed/TSVnbgwFjGI" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>
